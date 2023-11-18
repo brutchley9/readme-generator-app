@@ -8,8 +8,8 @@ inquirer
   .prompt([
     {
       type: 'input',
-      name: 'name',
-      message: 'what is your name?'
+      name: 'readmefilename',
+      message: 'What would you like to name your README file? (Please choose a name other than "README" as your file name)'
     },
     {
       type: 'checkbox',
@@ -25,7 +25,7 @@ inquirer
     },
   ])
   .then((data) => {
-    const filename = `${data.name}.md`;
+    const filename = `${data.readmefilename}.md`;
 
     const readmeFile = `# Generated README file!
     

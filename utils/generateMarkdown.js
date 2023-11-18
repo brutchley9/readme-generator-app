@@ -1,0 +1,1 @@
+console.log("Does generate markdown work?");

@@ -12,6 +12,31 @@ inquirer
       message: 'What would you like to name your README file? (Please choose a name other than "README" as your file name)'
     },
     {
+      type: 'input',
+      name: 'apptitle',
+      message: 'What is the title of your application?'
+    },
+    {
+      type: 'input',
+      name: 'readmepurpose',
+      message: 'Describe in a sentence or two what your application is attempting to accomplish'
+    },
+    {
+      type: 'input',
+      name: 'readmeapp',
+      message: 'Describe in a sentence or two the means by which you developed your application (programming languages/APIs/etc. used)'
+    },
+    {
+      type: 'input',
+      name: 'username',
+      message: 'Please enter your GitHub username'
+    },
+    {
+      type: 'input',
+      name: 'githubrepo',
+      message: 'Please enter the name of your GitHub repository containing your application code'
+    },
+    {
       type: 'checkbox',
       message: 'What languages do you know?',
       name: 'stack',
@@ -27,54 +52,33 @@ inquirer
   .then((data) => {
     const filename = `${data.readmefilename}.md`;
 
-    const readmeFile = `# Generated README file!
+    const readmeFile = `# ${data.apptitle}
     
-For this week's challenge, my task is to utilize Node.js to create a README file generator, a back-end web application that utilizes user inputs through the command line to automatically create a README file. The purpose of this is to allow users to quickly render a file that describes their own application in order to save valuable time trying to create a README file from scratch, streamlining the process of web development even further.
+
+${data.readmepurpose} ${data.readmeapp}
     
+
 ---
     
-Follow link https://github.com/brutchley9/readme-generator to access GitHub repository for this website (including code).
+
+Follow link https://github.com/${data.username}/${data.githubrepo} to access GitHub repository for this website (including code).
     
+
 ---
     
+
 # Resources
     
+
 <li>https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide</li>
     
+
 <li>https://www.educative.io/answers/how-to-use-the-inquirer-node-package</li>
     
+
 <li>https://www.codecademy.com/article/getting-user-input-in-node-js</li>`;
   
     fs.writeFile(filename, readmeFile, (err) =>
         err ? console.log(err) : console.log('README file generated!')
     );
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// TODO: Include packages needed for this application
-
-// TODO: Create an array of questions for user input
-//const questions = [];
-
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-//function init() {}
-
-// Function call to initialize app
-//init();

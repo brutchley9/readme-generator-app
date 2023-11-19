@@ -19,4 +19,4 @@ console.log("Does generate markdown work?");
 //`;
 //}
 
-//module.exports = generateMarkdown;
+module.exports = generateMarkdown;

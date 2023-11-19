@@ -4,6 +4,35 @@ console.log("Thank you for using the README Generator App. One moment please..."
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+function renderLicenseBadge(license) {
+  let licenseBadge = "";
+  if(addlicenses === 'No License') {
+    licenseBadge = 'No License Selected'
+  } else if (license === 'Apache License 2.0') {
+    licenseBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+  } else if (license === 'GNU General Public License v3.0') {
+    licenseBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
+  } else if (license === 'MIT License') {
+    licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+  } else if (license === 'Eclipse Public License 2.0') {
+    licenseBadge = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
+  } else {
+    licenseBadge = ""
+  }
+  return licenseBadge;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 inquirer
   .prompt([
     {
@@ -60,7 +89,7 @@ inquirer
       type: 'checkbox',
       message: 'Which Licenses would you like to add?',
       name: 'addlicenses',
-      choices: ['Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'BSD 2-Clause Simplified License', 'BSD 3-Clause New or Revised License', 'Boost Software License 1.0', 'Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0', 'GNU Affero General Public License v3.0', 'GNU Lesser General Public License v2.1', 'Mozilla Public License 2.0', 'The Unlicense'],
+      choices: ['No License', 'Apache License 2.0', 'GNU General Public License v3.0', 'MIT License', 'Eclipse Public License 2.0'],
     },
   ])
   .then((data) => {
@@ -147,7 +176,7 @@ ${data.tests}
 Need additional information? Contact Me: ${data.email}
 
 
-Follow link https://github.com/${data.username} to check out my GitHub profile!.
+Follow link https://github.com/${data.username} to check out my GitHub profile!
     
 
 ---`;

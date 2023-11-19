@@ -75,9 +75,6 @@ inquirer
     const readmeFile = `# ${data.apptitle}
 
 
----
-
-
 <h2>Description</h2>
 
 
@@ -89,11 +86,23 @@ ${data.readmepurpose} ${data.readmeapp}
 
 # Table of Contents
 
+1. [Installation](#installation)
+
+2. [Usage](#usage)
+
+3. [Licenses](#licenses)
+
+4. [Contributing](#contributing)
+
+5. [Tests](#tests)
+
+6. [Questions?](#questions)
+
 
 ---
 
 
-<h2>Installation</h2>
+## Installation
 
 
 How to install application:
@@ -105,7 +114,7 @@ ${data.installation}
 ---
 
 
-<h2>Usage</h2>
+## Usage
 
 
 ${data.usage}
@@ -114,13 +123,13 @@ ${data.usage}
 ---
 
 
-<h2>License</h2>
+## Licenses
 
 
 ---
 
 
-<h2>Contributing</h2>
+## Contributing
 
 
 ${data.contributing}
@@ -129,7 +138,7 @@ ${data.contributing}
 ---
 
 
-<h2>Tests</h2>
+## Tests
 
 
 ${data.tests}
@@ -138,7 +147,7 @@ ${data.tests}
 ---
 
 
-<h2>Questions?</h2>
+## Questions?
 
 
 Need additional information? Contact Me: ${data.email}
@@ -147,12 +156,9 @@ Need additional information? Contact Me: ${data.email}
 Follow link https://github.com/${data.username} to check out my GitHub profile!.
     
 
----
-    
-
-# Resources`;
+---`;
   
     fs.writeFile(filename, readmeFile, (err) =>
-        err ? console.log(err) : console.log('README file generated!')
+        err ? console.log(err) : console.log('README file generated! Right-click on your file and select "Open Preview"')
     );
 });

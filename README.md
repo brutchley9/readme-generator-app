@@ -22,3 +22,7 @@ Follow link https://github.com/brutchley9/readme-generator-app to access GitHub 
 <li>https://www.educative.io/answers/how-to-use-the-inquirer-node-package</li>
     
 <li>https://www.codecademy.com/article/getting-user-input-in-node-js</li>
+
+<li>https://stackoverflow.com/questions/2822089/how-to-link-to-part-of-the-same-document-in-markdown</li>
+
+<li>https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba</li>

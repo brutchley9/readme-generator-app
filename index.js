@@ -9,7 +9,7 @@ inquirer
     {
       type: 'input',
       name: 'readmefilename',
-      message: 'What would you like to name your README file? (Please choose a name other than "README" as your file name)'
+      message: 'What would you like to name your README file? (Please choose a name other than "README" as your file name):'
     },
     {
       type: 'input',
@@ -19,22 +19,42 @@ inquirer
     {
       type: 'input',
       name: 'readmepurpose',
-      message: 'Describe in a sentence or two what your application is attempting to accomplish'
+      message: 'Describe in a sentence or two what your application is attempting to accomplish:'
     },
     {
       type: 'input',
       name: 'readmeapp',
-      message: 'Describe in a sentence or two the means by which you developed your application (programming languages/APIs/etc. used)'
+      message: 'Describe in a sentence or two the means by which you developed your application (programming languages/APIs/etc. used):'
     },
     {
       type: 'input',
       name: 'username',
-      message: 'Please enter your GitHub username'
+      message: 'Please enter your GitHub username:'
     },
     {
       type: 'input',
-      name: 'githubrepo',
-      message: 'Please enter the name of your GitHub repository containing your application code'
+      name: 'email',
+      message: 'Enter the primary email address where you can be reached by your users:'
+    },
+    {
+      type: 'input',
+      name: 'installation',
+      message: 'Please provide a step by step description of installation instructions for users. The more descriptive, the better!'
+    },
+    {
+      type: 'input',
+      name: 'usage',
+      message: 'Please provide any relevant usage information the user may encounter. What sort of problems/issues might they encounter?'
+    },
+    {
+      type: 'input',
+      name: 'tests',
+      message: 'Please provide description of test instructions needed to ensure application quality:'
+    },
+    {
+      type: 'input',
+      name: 'contributing',
+      message: 'How might users go about contributing to this project? (push/pull instructions, etc.):'
     },
     {
       type: 'checkbox',
@@ -53,30 +73,84 @@ inquirer
     const filename = `${data.readmefilename}.md`;
 
     const readmeFile = `# ${data.apptitle}
-    
+
+
+---
+
+
+<h2>Description</h2>
+
 
 ${data.readmepurpose} ${data.readmeapp}
     
 
 ---
-    
 
-Follow link https://github.com/${data.username}/${data.githubrepo} to access GitHub repository for this website (including code).
+
+# Table of Contents
+
+
+---
+
+
+<h2>Installation</h2>
+
+
+How to install application:
+
+
+${data.installation}
+
+
+---
+
+
+<h2>Usage</h2>
+
+
+${data.usage}
+
+
+---
+
+
+<h2>License</h2>
+
+
+---
+
+
+<h2>Contributing</h2>
+
+
+${data.contributing}
+
+
+---
+
+
+<h2>Tests</h2>
+
+
+${data.tests}
+
+
+---
+
+
+<h2>Questions?</h2>
+
+
+Need additional information? Contact Me: ${data.email}
+
+
+Follow link https://github.com/${data.username} to check out my GitHub profile!.
     
 
 ---
     
 
-# Resources
-    
-
-<li>https://coding-boot-camp.github.io/full-stack/github/professional-readme-guide</li>
-    
-
-<li>https://www.educative.io/answers/how-to-use-the-inquirer-node-package</li>
-    
-
-<li>https://www.codecademy.com/article/getting-user-input-in-node-js</li>`;
+# Resources`;
   
     fs.writeFile(filename, readmeFile, (err) =>
         err ? console.log(err) : console.log('README file generated!')

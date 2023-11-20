@@ -10,7 +10,8 @@ For this week's challenge, my task is to utilize Node.js to create a README file
     
 
 Follow link https://github.com/brutchley9/readme-generator-app to access GitHub repository for this website (including code).
-    
+
+Follow link - - - to view a tutorial video on how to access and initialize this application from the command line.
 
 ---
     

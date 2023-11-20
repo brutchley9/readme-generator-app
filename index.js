@@ -4,23 +4,7 @@ console.log("Thank you for using the README Generator App. One moment please..."
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-function renderLicenseBadge(license) {
-  let licenseBadge = "";
-  if(addlicenses === 'No License') {
-    licenseBadge = 'No License Selected'
-  } else if (license === 'Apache License 2.0') {
-    licenseBadge = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
-  } else if (license === 'GNU General Public License v3.0') {
-    licenseBadge = '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)'
-  } else if (license === 'MIT License') {
-    licenseBadge = '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
-  } else if (license === 'Eclipse Public License 2.0') {
-    licenseBadge = '[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)'
-  } else {
-    licenseBadge = ""
-  }
-  return licenseBadge;
-}
+
 
 
 
@@ -38,7 +22,7 @@ inquirer
     {
       type: 'input',
       name: 'readmefilename',
-      message: 'What would you like to name your README file? (Please choose a name other than "README" as your file name):'
+      message: 'What would you like to name your README file?'
     },
     {
       type: 'input',
